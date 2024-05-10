@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { FaOpencart } from 'react-icons/fa';
 import { MdClose, MdMenu } from 'react-icons/md';
 import { MdCategory, MdContacts, MdHomeFilled, MdShop2 } from 'react-icons/md';
 
@@ -48,9 +49,12 @@ const Header = () => {
           </div>
 
           <div className="flex items-center justify-center gap-x-10">
-            <div className=""> cart</div>
+            <div className=""> <FaOpencart /></div>
             <div className=""> login</div>
           </div>
+
+
+
           {/* Navbar desktop*/}
           {/* <Navbar /> */}
           {/* Navbar mobile*/}
