@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { MdClose, MdMenu } from 'react-icons/md';
+import { MdCategory, MdContacts, MdHomeFilled, MdShop2 } from 'react-icons/md';
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
@@ -13,22 +14,47 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed w-full mx-auto bg-white ring-1 ring-slate-900/5 px-6">
-        <div className="flex items-center justify-between px-4 py-3">
+      <header className="w-full mx-auto bg-white ring-1 ring-slate-900/5 px-6">
+        <div className="flex items-center justify-between px-4 py-4">
           {/* Logo */}
           <div className="">
             <Link href={'/'}>
               <Image src={Logo} alt="Logo" height={88} width={88} />
             </Link>
           </div>
+
+          <div className="flex items-center justify-center gap-x-10 text-lg font-semibold">
+            <Link href="/" className="flex items-center justify-center gap-x-1">
+              <MdHomeFilled className="" /> Home
+            </Link>
+            <Link
+              href="/mens"
+              className="flex items-center justify-center gap-x-1"
+            >
+              <MdCategory className="" /> Mens
+            </Link>
+            <Link
+              href="/womens"
+              className="flex items-center justify-center gap-x-1"
+            >
+              <MdShop2 className="" /> Womens
+            </Link>
+            <Link
+              href="/kids"
+              className="flex items-center justify-center gap-x-1"
+            >
+              <MdContacts className="" /> Kids
+            </Link>
+          </div>
+
+          <div className="flex items-center justify-center gap-x-10">
+            <div className=""> cart</div>
+            <div className=""> login</div>
+          </div>
           {/* Navbar desktop*/}
-          <Navbar
-            navbarStyle={
-              'hidden md:flex gap-x-10 xl:gap-x-10 text-lg font-semibold'
-            }
-          />
+          {/* <Navbar /> */}
           {/* Navbar mobile*/}
-          <Navbar
+          {/* <Navbar
             navbarStyle={`${
               menuOpened
                 ? 'flex items-start flex-col gap-y-5 fixed top-20 right-8 p-5 bg-white rounded-3xl shadow-md w-64 text-[16px] font-semibold ring-1 ring-slate-900/5 transition-all duration-300'
@@ -48,7 +74,7 @@ const Header = () => {
               />
             )}
             <div className="flex items-center justify-between sm:gap-x-6"></div>
-          </div>
+          </div> */}
 
           {/* Login */}
           {/* <div className=""></div> */}
