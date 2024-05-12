@@ -13,6 +13,10 @@ const config: Config = {
         secondary: '#ff813f',
         tertiary: '#222222',
       },
+      backgroundImage: {
+        hero: "url('/bgecom.png')",
+        banneroffer: "url('/banneroffer.png')",
+      },
     },
   },
   plugins: [],
