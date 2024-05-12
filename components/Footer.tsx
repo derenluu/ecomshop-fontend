@@ -3,76 +3,81 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-const FooterColumn = ({ title, children }) => {
+const FooterColumn = ({ title, children }: any) => {
   return (
-    <div className='flex flex-col gap-5'>
-      <h4 className='text-lg font-bold whitespace-nowrap'>{title}</h4>
-      {children}
-    </div>
+    <>
+      <div className='flex flex-col gap-5'>
+        <h4 className='text-lg font-bold whitespace-nowrap'>{title}</h4>
+        {children}
+      </div>
+    </>
   );
 };
 
 const Footer = () => {
   return (
-    <footer className='flex flex-col items-center justify-center w-full py-10 bg-gray-100'>
-      <div className='flex flex-col items-center justify-center w-full max-w-6xl px-6 md:flex-row md:justify-between'>
-        <div className='flex items-center justify-center mb-8 md:mb-0'>
-          <Link href={'/'} className='text-xl font-bold'>
-            Shopper
-          </Link>
-        </div>
+    <>
+      <footer className='flex w-full pb-14 pt-20'>
+        <div className='flex flex-col w-full mx-auto max-w-full px-6 gap-14'>
+          <div className='flex flex-row items-start justify-center gap-[10%]'>
+            <Link href={'/'} className='mb-10 text-xl font-bold'>
+              Shopper
+            </Link>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
-          {FOOTER_LINKS.map((col, index) => (
-            <FooterColumn key={index} title={col.title}>
-              <ul className='flex flex-col text-[#A2A2A2] text-sm font-normal gap-4'>
-                {col.links.map((link, i) => (
-                  <li key={i}>
-                    <Link href={link.url}>{link.label}</Link>
-                  </li>
-                ))}
-              </ul>
-            </FooterColumn>
-          ))}
-
-          <FooterColumn title={FOOTER_CONTACT_INFO.title}>
-            <ul className='flex flex-col gap-4'>
-              {FOOTER_CONTACT_INFO.links.map((link, i) => (
-                <li key={i}>
-                  <p className='text-sm text-[#7B7B7B] leading-[1.3]'>
-                    {link.label}:{' '}
-                    <span className='font-semibold'>{link.value}</span>
-                  </p>
-                </li>
+            <div className='flex items-start justify-center gap-8'>
+              {FOOTER_LINKS.map((col, index) => (
+                <FooterColumn key={index} title={col.title}>
+                  <ul className='flex flex-col text-[#A2A2A2] text-sm font-normal gap-4'>
+                    {col.links.map((link) => (
+                      <Link href={'/'} key={link}>
+                        {link}
+                      </Link>
+                    ))}
+                  </ul>
+                </FooterColumn>
               ))}
-            </ul>
-          </FooterColumn>
 
-          <FooterColumn>
-            <ul className='flex gap-4'>
-              {SOCIALS.links.map((link, i) => (
-                <li key={i}>
-                  <Link href={link.url}>
-                    <Image
-                      src={link.icon}
-                      alt={link.label}
-                      width={22}
-                      height={22}
-                    />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </FooterColumn>
+              <div className='flex flex-col gap-5'>
+                <FooterColumn title={FOOTER_CONTACT_INFO.title}>
+                  {FOOTER_CONTACT_INFO.links.map((link) => (
+                    <Link href={'/'} key={link.label} className='flex gap-4'>
+                      <p className='text-sm text-[#7B7B7B] leading-[1.3]'>
+                        {link.label}:{' '}
+                        <span className='text-sm font-semibold'>
+                          {link.value}
+                        </span>
+                      </p>
+                    </Link>
+                  ))}
+                </FooterColumn>
+              </div>
+
+              <div className='flex '>
+                <FooterColumn>
+                  <ul className='flex items-start  gap-4'>
+                    {SOCIALS.links.map((link) => (
+                      <Link href={'/'} key={link}>
+                        <Image
+                          src={link}
+                          alt='socialIcon'
+                          width={22}
+                          height={22}
+                        />
+                      </Link>
+                    ))}
+                  </ul>
+                </FooterColumn>
+              </div>
+            </div>
+          </div>
+
+          <div className='boder bg-[#A2A2A2]'></div>
+          <p className='text-center text-[#7B7B7B] text-sm font-normal'>
+            2024 Shopper | All Rights Reserved.
+          </p>
         </div>
-      </div>
-
-      <div className='w-full max-w-6xl mt-8 border-t border-gray-300'></div>
-
-      <p className='mt-8 text-sm text-[#7B7B7B] font-normal'>
-        © 2024 Shopper. All Rights Reserved.
-      </p>
-    </footer>
+      </footer>
+    </>
   );
 };
 
