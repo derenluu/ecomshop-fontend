@@ -1,13 +1,12 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { FaStar } from 'react-icons/fa';
-import { MdOutlineLocalOffer, MdStar } from 'react-icons/md';
+import { MdOutlineLocalOffer } from 'react-icons/md';
 
 const Hero = () => {
   return (
     <>
       <section className='relative bg-hero bg-cover bg-center bg-no-repeat h-screen w-full'>
-        <div className='relative max-w-full mx-auto px-6 lg:px-20 top-32 lg:top-52 border-x-current'>
+        <div className='relative max-w-[1440px] mx-auto px-6 lg:px-20 top-32 lg:top-52 border-x-current'>
           <h1 className='max-w-[37rem] text-5xl lg:text-7xl leading-tight lg:leading-snug font-bold capitalize mb-8'>
             Digital Shopping Hub Junction
           </h1>

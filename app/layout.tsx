@@ -1,6 +1,9 @@
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
+import ShopContextProvider from '@/contexts/ShopContext';
 import '@/styles/globals.css';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 
@@ -12,14 +15,14 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: 'Ecommerce Shop',
   description: 'Ecommerce Shop',
-  // icons: {
-  //   icon: [
-  //     {
-  //       url: '/gear.png',
-  //       href: '/gear.png',
-  //     },
-  //   ],
-  // },
+  icons: {
+    icon: [
+      {
+        url: '/logo.svg',
+        href: '/logo.svg',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -28,14 +31,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body className={poppins.className}>
         <Header />
-        {children}
+        <ShopContextProvider>{children}</ShopContextProvider>
         <Footer />
-        {/* <Navbar />
-        <ShopContextProvider></ShopContextProvider>
-         */}
+        {/* <Analytics /> */}
+        {/* <SpeedInsights /> */}
       </body>
     </html>
   );

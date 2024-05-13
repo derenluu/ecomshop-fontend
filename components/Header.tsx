@@ -33,8 +33,8 @@ const Header = () => {
           <Navbar
             navbarStyle={`${
               menuOpened
-                ? 'flex items-start flex-col gap-y-5 fixed top-20 right-8 p-5 bg-white rounded-3xl shadow-md w-64 text-[16px] font-semibold ring-1 ring-slate-900/5 transition-all duration-300'
-                : 'flex items-start flex-col gap-y-12 fixed top-20 p-12 bg-white rounded-3xl shadow-md w-64 text-[16px] font-semibold ring-1 ring-slate-900/5 transition-all duration-300 -right-[100%]'
+                ? 'flex items-start flex-col gap-y-5 fixed top-20 right-8 p-6 bg-white rounded-3xl shadow-md w-64 text-[16px] font-semibold ring-1 ring-slate-900/5 transition-all duration-300'
+                : 'flex items-start flex-col gap-y-12 fixed top-20 p-6 bg-white rounded-3xl shadow-md w-64 text-[16px] font-semibold ring-1 ring-slate-900/5 transition-all duration-300 -right-[100%]'
             }`}
           />
 
@@ -66,7 +66,7 @@ const Header = () => {
 
               {/* Login Button */}
               <Link
-                href={'/Login'}
+                href={'/login'}
                 className='flex items-center justify-center gap-x-2 text-base font-semibold border border-secondary bg-secondary px-5 py-3 text-white transition-all hover:bg-[#ff6b1c] rounded-full'
               >
                 <Image src={LoginIcon} alt='LoginIcon' width={19} height={19} />
@@ -76,7 +76,7 @@ const Header = () => {
               {/* Logout Button */}
               <Link
                 href={'/logout'}
-                className='flex items-center justify-center gap-x-2 text-base font-semibold border border-secondary bg-secondary px-5 py-3 text-white transition-all hover:bg-[#ff6b1c] rounded-full hidden'
+                className='flex hidden items-center justify-center gap-x-2 text-base font-semibold border border-secondary bg-secondary px-5 py-3 text-white transition-all hover:bg-[#ff6b1c] rounded-full'
               >
                 <Image
                   src={LogoutIcon}

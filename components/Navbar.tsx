@@ -4,7 +4,11 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { MdCategory, MdContacts, MdHomeFilled, MdShop2 } from 'react-icons/md';
 
-const Navbar = ({ navbarStyle }: { navbarStyle: string }) => {
+interface NavbarProps {
+  navbarStyle: string;
+}
+
+const Navbar = ({ navbarStyle }: NavbarProps) => {
   const [active, setActive] = useState('/');
 
   const handleLinkClick = (categoryName: string) => {
@@ -17,7 +21,7 @@ const Navbar = ({ navbarStyle }: { navbarStyle: string }) => {
           href='/'
           className={`flex items-center justify-center gap-x-1 ${
             active === '/'
-              ? 'relative flex-1 text-secondary after:w-full after:h-[-1px] after:bg-secondary after:absolute after:-bottom-3 after:right-0'
+              ? 'text-secondary relative flex-1 after:w-full after:h-[2px] after:bg-secondary after:absolute after:-bottom-1 after:text-xl after:right-0'
               : ''
           } `}
           onClick={() => handleLinkClick('/')}
@@ -25,35 +29,35 @@ const Navbar = ({ navbarStyle }: { navbarStyle: string }) => {
           <MdHomeFilled className='' /> Home
         </Link>
         <Link
-          href='/mens'
+          href='/men'
           className={`flex items-center justify-center gap-x-1 ${
-            active === '/mens'
-              ? 'relative flex-1 text-secondary after:w-full after:h-[-1px] after:bg-secondary after:absolute after:-bottom-3 after:right-0'
+            active === '/men'
+              ? 'text-secondary relative flex-1 after:w-full after:h-[2px] after:bg-secondary after:absolute after:-bottom-1 after:text-xl after:right-0'
               : ''
           } `}
-          onClick={() => handleLinkClick('/mens')}
+          onClick={() => handleLinkClick('/men')}
         >
-          <MdCategory className='' /> Mens
+          <MdCategory className='' /> Men&#8217;s
         </Link>
         <Link
-          href='/womens'
+          href='/women'
           className={`flex items-center justify-center gap-x-1 ${
-            active === '/womens'
-              ? 'relative flex-1 text-secondary after:w-full after:h-[-1px] after:bg-secondary after:absolute after:-bottom-3 after:right-0'
+            active === '/women'
+              ? 'text-secondary relative flex-1 after:w-full after:h-[2px] after:bg-secondary after:absolute after:-bottom-1 after:text-xl after:right-0'
               : ''
           } `}
-          onClick={() => handleLinkClick('/womens')}
+          onClick={() => handleLinkClick('/women')}
         >
-          <MdShop2 className='' /> Womens
+          <MdShop2 className='' /> Women&#8217;s
         </Link>
         <Link
-          href='/kids'
+          href='/kid'
           className={`flex items-center justify-center gap-x-1 ${
-            active === '/kids'
-              ? 'relative flex-1 text-secondary after:w-full after:h-[-1px] after:bg-secondary after:absolute after:-bottom-3 after:right-0'
+            active === '/kid'
+              ? 'text-secondary relative flex-1 after:w-full after:h-[2px] after:bg-secondary after:absolute after:-bottom-1 after:text-xl after:right-0'
               : ''
           } `}
-          onClick={() => handleLinkClick('/kids')}
+          onClick={() => handleLinkClick('/kid')}
         >
           <MdContacts className='' /> Kids
         </Link>
