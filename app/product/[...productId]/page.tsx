@@ -1,5 +1,6 @@
 'use client';
 
+import ProductDescription from '@/components/ProductDescription';
 import ProductDisplay from '@/components/ProductDisplay';
 import ProductHd from '@/components/ProductHd';
 import { ShopContext } from '@/contexts/ShopContext';
@@ -18,10 +19,11 @@ const ProductPage = () => {
 
   return (
     <>
-      <section>
+      <section className='mx-auto max-w-[1440px] px-6 lg:px-20 py-28'>
         <div className=''>
           <ProductHd product={product} />
           <ProductDisplay product={product} />
+          <ProductDescription product={product} />
         </div>
       </section>
     </>

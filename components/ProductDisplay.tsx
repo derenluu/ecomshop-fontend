@@ -16,21 +16,29 @@ const ProductDisplay = ({ product }: any) => {
               <Image
                 src={product_rt_1}
                 alt='ProductImage'
+                height={99}
+                width={99}
                 className='max-h-[99px]'
               />
               <Image
                 src={product_rt_2}
                 alt='ProductImage'
+                height={99}
+                width={99}
                 className='max-h-[99px]'
               />
               <Image
                 src={product_rt_3}
                 alt='ProductImage'
+                height={99}
+                width={99}
                 className='max-h-[99px]'
               />
               <Image
                 src={product_rt_4}
                 alt='ProductImage'
+                height={99}
+                width={99}
                 className='max-h-[99px]'
               />
             </div>
@@ -40,21 +48,23 @@ const ProductDisplay = ({ product }: any) => {
           </div>
           {/* right side */}
 
-          <div className=''>
-            <h3>{product.name}</h3>
-            <div className=''>
+          <div className='flex flex-col'>
+            <h3 className='text-[32px] leading-tight md:text-[36px] md:leading-[1.3] mb-4 font-semibold'>
+              {product.name}
+            </h3>
+            <div className='flex gap-x-2 text-secondary text-[22px] font-semibold'>
               <MdStar />
               <MdStar />
               <MdStar />
               <MdStar />
               <p>(111)</p>
             </div>
-            <div className=''>
-              <div className=''>{product.old_price}</div>
-              <div className=''>{product.new_price}</div>
+            <div className='flex gap-x-6 text-[20px] font-semibold my-4'>
+              <div className='line-through'>{product.old_price}</div>
+              <div className='text-secondary'>{product.new_price}</div>
             </div>
-            <div className=''>
-              <h4>Select Size</h4>
+            <div className='mb-4'>
+              <h4 className='text-base font-bold'>Select Size</h4>
               <div className='flex gap-3 my-3'>
                 <div className='flex items-center justify-center h-10 w-10 ring-2 ring-slate-900/10 cursor-pointer'>
                   S
@@ -69,15 +79,31 @@ const ProductDisplay = ({ product }: any) => {
                   XL
                 </div>
               </div>
-              <div className=''>
-                <button type='button'>Add to cart</button>
-                <button type='button'>Buy it now</button>
+              <div className='flex flex-col gap-y-3 mb-4 max-w-[555px]'>
+                <button
+                  type='button'
+                  className='text-sm font-semibold border border-[#292C27] bg-transparent px-7 py-3 text-[#292C27] transition-all hover:bg-black hover:text-white !rounded-none uppercase tracking-widest'
+                >
+                  Add to cart
+                </button>
+                <button
+                  type='button'
+                  className='text-sm font-semibold border border-[#292C27] bg-[#292C27] px-7 py-3 text-white transition-all hover:bg-black !rounded-none uppercase tracking-widest'
+                >
+                  Buy it now
+                </button>
               </div>
-              <p>
-                <span>Category: </span> Women | Jacket | Winter
+              <p className='leading-[1.3] text-[#7B7B7B] text-base'>
+                <span className='text-base font-medium text-tertiary'>
+                  Category:{' '}
+                </span>
+                Women | Jacket | Winter
               </p>
-              <p>
-                <span>Tags: </span> Modern | Latest
+              <p className='leading-[1.3] text-[#7B7B7B] text-base'>
+                <span className='text-base font-medium text-tertiary'>
+                  Tags:{' '}
+                </span>
+                Modern | Latest
               </p>
             </div>
           </div>
