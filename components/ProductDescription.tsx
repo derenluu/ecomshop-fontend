@@ -1,4 +1,4 @@
-const ProductDescription = () => {
+const ProductDescription = ({ product }: any) => {
   return (
     <>
       <div className='mt-14'>
