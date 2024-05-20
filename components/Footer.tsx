@@ -3,7 +3,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-const FooterColumn = ({ title, children }: any) => {
+interface FooterColumnProps {
+  title: string;
+  children: any;
+}
+
+const FooterColumn = ({ title, children }: FooterColumnProps) => {
   return (
     <>
       <div className='flex flex-col gap-5'>
@@ -39,14 +44,9 @@ const Footer = () => {
             ))}
             <FooterColumn title={FOOTER_CONTACT_INFO.title}>
               {FOOTER_CONTACT_INFO.links.map((link, index) => (
-                <Link
-                  href={'/'}
-                  key={link.label + index}
-                  className='flex gap-4'
-                >
+                <Link href={'/'} key={link.label + index} className='flex gap-4'>
                   <p className='text-sm text-[#7B7B7B] leading-[1.3]'>
-                    {link.label}:{' '}
-                    <span className='font-semibold'>{link.value}</span>
+                    {link.label}: <span className='font-semibold'>{link.value}</span>
                   </p>
                 </Link>
               ))}
@@ -65,9 +65,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <p className='mt-3 text-center text-[#7B7B7B] text-sm font-normal'>
-        2024 Shopper | All Rights Reserved.
-      </p>
+      <p className='mt-3 text-center text-[#7B7B7B] text-sm font-normal'>2024 Shopper | All Rights Reserved.</p>
     </footer>
   );
 };

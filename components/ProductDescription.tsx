@@ -1,4 +1,4 @@
-const ProductDescription = ({ product }: any) => {
+const ProductDescription = () => {
   return (
     <>
       <div className='mt-14'>
@@ -29,8 +29,9 @@ const ProductDescription = ({ product }: any) => {
           </p>
           <p className='leading-[1.3] text-[#7B7B7B] text-sm'>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi nam quos iste vero? Inventore ullam provident in delectus facilis earum
-            quae vel nesciunt, ut hic suscipit quibusdam nisi libero odio!
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti labore provident ullam, modi id aut. Beatae, sed corrupti reiciendis, ratione laborum dignissimos mollitia a officiis earum dolorum rerum! Culpa, facilis!
+            quae vel nesciunt, ut hic suscipit quibusdam nisi libero odio! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti labore
+            provident ullam, modi id aut. Beatae, sed corrupti reiciendis, ratione laborum dignissimos mollitia a officiis earum dolorum rerum! Culpa,
+            facilis!
           </p>
           <p className='leading-[1.3] text-[#7B7B7B] text-sm'>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi nam quos iste vero? Inventore ullam provident in delectus facilis earum

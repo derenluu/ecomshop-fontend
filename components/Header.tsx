@@ -46,18 +46,12 @@ const Header = () => {
                   onClick={toggleMenu}
                 />
               ) : (
-                <MdClose
-                  className={`cursor-pointer mr-2 p-1 ring-1 ring-secondary text-secondary h-8 w-8 rounded-full`}
-                  onClick={toggleMenu}
-                />
+                <MdClose className={`cursor-pointer mr-2 p-1 ring-1 ring-secondary text-secondary h-8 w-8 rounded-full`} onClick={toggleMenu} />
               )}
             </div>
 
             <div className='flex items-center justify-between gap-x-5'>
-              <Link
-                href={'/cart'}
-                className='flex items-center justify-between'
-              >
+              <Link href={'/cart'} className='flex items-center justify-between'>
                 <FaOpencart className='p-1 h-8 w-8 ring-slate-900/30 ring-1 rounded-full' />
                 <span className='relative flex items-center justify-center w-5 h-5 rounded-full bg-secondary text-white text-sm font-semibold -top-3 -left-1'>
                   0
@@ -78,12 +72,7 @@ const Header = () => {
                 href={'/logout'}
                 className='flex hidden items-center justify-center gap-x-2 text-base font-semibold border border-secondary bg-secondary px-5 py-3 text-white transition-all hover:bg-[#ff6b1c] rounded-full'
               >
-                <Image
-                  src={LogoutIcon}
-                  alt='LogoutIcon'
-                  width={19}
-                  height={19}
-                />
+                <Image src={LogoutIcon} alt='LogoutIcon' width={19} height={19} />
                 Logout
               </Link>
             </div>

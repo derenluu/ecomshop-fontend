@@ -11,10 +11,8 @@ const Hero = () => {
             Digital Shopping Hub Junction
           </h1>
           <p className='max-w-[33rem] text-[#585858] text-base font-normal mt-6'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
-            aperiam pariatur illum, atque vitae recusandae ipsa, nulla repellat
-            ab quasi laboriosam veritatis maxime voluptate doloremque tenetur
-            eaque tempore sapiente similique.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aperiam pariatur illum, atque vitae recusandae ipsa, nulla repellat ab quasi
+            laboriosam veritatis maxime voluptate doloremque tenetur eaque tempore sapiente similique.
           </p>
           <div className='flex items-center justify-start gap-x-4 mt-10 mb-5'>
             <div className='flex items-center justify-center text-2xl font-normal gap-x-2'>
@@ -24,10 +22,7 @@ const Hero = () => {
               <FaStar />
             </div>
             <div className='flex items-center justify-betwee text-base font-bold md:text-xl md:font-bold gap-x-2'>
-              356k{' '}
-              <span className='text-base font-normal md:text-xl md:font-normal'>
-                Excellent Reviews
-              </span>
+              356k <span className='text-base font-normal md:text-xl md:font-normal'>Excellent Reviews</span>
             </div>
           </div>
           <div className='flex gap-x-5'>

@@ -3,6 +3,7 @@
 import ProductDescription from '@/components/ProductDescription';
 import ProductDisplay from '@/components/ProductDisplay';
 import ProductHd from '@/components/ProductHd';
+import ProductRelated from '@/components/ProductRelated';
 import { ShopContext } from '@/contexts/ShopContext';
 import { usePathname } from 'next/navigation';
 import { useContext } from 'react';
@@ -23,7 +24,8 @@ const ProductPage = () => {
         <div className=''>
           <ProductHd product={product} />
           <ProductDisplay product={product} />
-          <ProductDescription product={product} />
+          <ProductDescription />
+          <ProductRelated />
         </div>
       </section>
     </>

@@ -115,14 +115,7 @@ export const LATEST = [
 export const FOOTER_LINKS = [
   {
     title: 'Learn More',
-    links: [
-      'About Us',
-      'Categories',
-      'Exchange Policy',
-      'Order Now',
-      'FAQ',
-      'Privacy Policy',
-    ],
+    links: ['About Us', 'Categories', 'Exchange Policy', 'Order Now', 'FAQ', 'Privacy Policy'],
   },
   {
     title: 'Our Community',

@@ -5,7 +5,11 @@ import product_rt_4 from '@/assets/images/product_rt_4.png';
 import Image from 'next/image';
 import { MdStar } from 'react-icons/md';
 
-const ProductDisplay = ({ product }: any) => {
+interface ProductDisplayProps {
+  product: any;
+}
+
+const ProductDisplay = ({ product }: ProductDisplayProps) => {
   return (
     <>
       <section className=''>

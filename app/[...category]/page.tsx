@@ -11,7 +11,6 @@ import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
 
 const Category = () => {
   const pathname = usePathname().slice(1);
-  console.log(pathname);
 
   return (
     <>
@@ -19,15 +18,7 @@ const Category = () => {
         <div className=''>
           <div className=''>
             <Image
-              src={
-                pathname === 'men'
-                  ? MenBanner
-                  : pathname === 'women'
-                  ? WomenBanner
-                  : pathname === 'kid'
-                  ? KidsBanner
-                  : ''
-              }
+              src={pathname === 'men' ? MenBanner : pathname === 'women' ? WomenBanner : pathname === 'kid' ? KidsBanner : ''}
               alt='Banner Category'
               className='block my-7 mx-auto'
             />
@@ -45,16 +36,7 @@ const Category = () => {
           <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6'>
             {all_products.map((item, index) => {
               if (item.category === pathname) {
-                return (
-                  <Item
-                    key={index}
-                    id={item.id}
-                    name={item.name}
-                    image={item.image}
-                    old_price={item.old_price}
-                    new_price={item.new_price}
-                  />
-                );
+                return <Item key={index} id={item.id} name={item.name} image={item.image} old_price={item.old_price} new_price={item.new_price} />;
               }
               return null;
             })}

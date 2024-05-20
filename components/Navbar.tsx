@@ -14,6 +14,7 @@ const Navbar = ({ navbarStyle }: NavbarProps) => {
   const handleLinkClick = (categoryName: string) => {
     setActive(categoryName);
   };
+  
   return (
     <>
       <div className={navbarStyle}>

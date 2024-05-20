@@ -1,7 +1,11 @@
 import { capitalizeFirstLetter } from '@/utils/capitalize';
 import { TbArrowRight } from 'react-icons/tb';
 
-const ProductHd = ({ product }: any) => {
+interface ProductHdProps {
+  product: any;
+}
+
+const ProductHd = ({ product }: ProductHdProps) => {
   return (
     <>
       <div className='flex items-center flex-wrap gap-x-2 text-base font-semibold my-4'>
