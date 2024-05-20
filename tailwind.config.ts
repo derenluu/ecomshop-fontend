@@ -14,10 +14,10 @@ const config: Config = {
         banneroffer: "url('/banneroffer.png')",
       },
       screens: {
-        sm: '640px',
-        md: '768px',
-        lg: '1024px',
-        xl: '1280px',
+        sm: '640px', // mobile screen
+        md: '768px', // tablet screen
+        lg: '1024px', // laptop screen
+        xl: '1280px', // desktop screen
       },
     },
   },
