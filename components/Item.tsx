@@ -10,9 +10,9 @@ interface ItemProps {
   old_price: number;
 }
 
-const scrollTo = () => {
-  return window.scrollTo(0, 0);
-};
+// const scrollTo = () => {
+//   return window.scrollTo(0, 0);
+// };
 
 const Item = ({ id, name, image, new_price, old_price }: ItemProps) => {
   return (
@@ -29,7 +29,7 @@ const Item = ({ id, name, image, new_price, old_price }: ItemProps) => {
             src={image}
             alt={'productImage'}
             className='block w-full object-cover group-hover:scale-110 transition-all duration-1000'
-            onClick={scrollTo}
+            // onClick={scrollTo}
           />
         </div>
         <div className='p-4 overflow-hidden'>

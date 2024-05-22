@@ -1,32 +1,22 @@
 'use client';
 
 import all_products from '@/assets/all_products';
-import { createContext, ReactNode, useState } from 'react';
+import { createContext, useState } from 'react';
 
-// Define data for all_products
-interface ShopContextType {
-  all_products: any[];
-}
+// Tạo context với giá trị mặc định
+export const ShopContext = createContext({ all_products });
 
-export const ShopContext = createContext<ShopContextType>({
-  // default values
-  all_products: [],
-});
+const ShopContextProvider = ({ children }: any) => (
+  // const getDefaultCart = () => (
+  //   let cart= {};
+  //   for(let i = 0; i < all_products.length; i++) {
+  //     cart[i] = 0;
+  //   }
 
-const ShopContextProvider = ({ children }: { children: ReactNode }) => {
-  const contextValue: ShopContextType = { all_products };
+  //   return cart;
+  // );
 
-  const getDefaultCart = () => {
-    let cart: { [key: number]: number } = {};
-    for (let index = 0; index < all_products.length; index++) {
-      // const element = all_products[index];
-      cart[index] = 0;
-    }
-    return cart;
-  };
+  <ShopContext.Provider value={{ all_products }}>{children}</ShopContext.Provider>
+);
 
-  const [cartItems, setCartItems] = useState(getDefaultCart());
-
-  return <ShopContext.Provider value={contextValue}>{children}</ShopContext.Provider>;
-};
 export default ShopContextProvider;

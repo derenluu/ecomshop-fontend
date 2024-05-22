@@ -11,6 +11,7 @@ import { useContext } from 'react';
 const ProductPage = () => {
   const { all_products } = useContext(ShopContext);
   const pathname = usePathname();
+  
   const productId = pathname.split('/').pop();
   const product = all_products.find((e) => e.id === Number(productId));
 
