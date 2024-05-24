@@ -2,14 +2,24 @@ import product_rt_1 from '@/assets/images/product_rt_1.png';
 import product_rt_2 from '@/assets/images/product_rt_2.png';
 import product_rt_3 from '@/assets/images/product_rt_3.png';
 import product_rt_4 from '@/assets/images/product_rt_4.png';
+import { ShopContext } from '@/contexts/ShopContext';
 import Image from 'next/image';
+import { useContext } from 'react';
 import { MdStar } from 'react-icons/md';
 
 interface ProductDisplayProps {
-  product: any;
+  product: {
+    id: number;
+    name: string;
+    image: string;
+    old_price: string;
+    new_price: string;
+  };
 }
 
 const ProductDisplay = ({ product }: ProductDisplayProps) => {
+  const { addToCart } = useContext(ShopContext);
+
   return (
     <>
       <section className=''>
@@ -54,6 +64,9 @@ const ProductDisplay = ({ product }: ProductDisplayProps) => {
                 <button
                   type='button'
                   className='text-sm font-semibold border border-[#292C27] bg-transparent px-7 py-3 text-[#292C27] transition-all hover:bg-black hover:text-white !rounded-none uppercase tracking-widest'
+                  onClick={() => {
+                    addToCart({ itemId: product.id });
+                  }}
                 >
                   Add to cart
                 </button>

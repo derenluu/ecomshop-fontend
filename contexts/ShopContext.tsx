@@ -1,22 +1,41 @@
 'use client';
 
 import all_products from '@/assets/all_products';
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
-// Tạo context với giá trị mặc định
-export const ShopContext = createContext({ all_products });
+// Create context with default values
+export const ShopContext = createContext({
+  all_products,
+  cartItems: {},
+  addToCart: (itemId: number) => {},
+  removeFromCart: (itemId: number) => {},
+});
 
-const ShopContextProvider = ({ children }: any) => (
-  // const getDefaultCart = () => (
-  //   let cart= {};
-  //   for(let i = 0; i < all_products.length; i++) {
-  //     cart[i] = 0;
-  //   }
+const getDefaultCart = () => {
+  let cart: { [key: number]: number } = {};
+  for (let i = 0; i < all_products.length + 1; i++) {
+    cart[i] = 0;
+  }
+  return cart;
+};
 
-  //   return cart;
-  // );
+const ShopContextProvider = ({ children }: any) => {
+  const [cartItems, setCartItems] = useState(getDefaultCart());
 
-  <ShopContext.Provider value={{ all_products }}>{children}</ShopContext.Provider>
-);
+  // console.log(cartItems)
+  const addToCart = (itemId: number) => {
+    setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
+    console.log(cartItems);
+  };
+
+  const removeFromCart = (itemId: number) => {
+    setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
+    console.log(cartItems);
+  };
+
+  const contextValue = { all_products, cartItems, addToCart, removeFromCart };
+
+  return <ShopContext.Provider value={contextValue}>{children}</ShopContext.Provider>;
+};
 
 export default ShopContextProvider;
